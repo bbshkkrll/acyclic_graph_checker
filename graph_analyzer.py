@@ -1,5 +1,4 @@
 import queue
-from typing import Dict, Set, Any
 
 
 def get_graph(filename):
@@ -18,11 +17,12 @@ def get_graph(filename):
     return graph
 
 
-def is_graph_acyclic(graph, start):
+def is_graph_acyclic(graph):
     _queue = queue.Queue()
     visited = set()
     steps = [-1] * len(graph)
 
+    start = 1
     _queue.put(start)
     steps[start - 1] = -1
 
@@ -82,4 +82,4 @@ def write_result(result):
 if __name__ == '__main__':
     graph = get_graph('in.txt')
 
-    write_result(is_graph_acyclic(graph, 5))
+    write_result(is_graph_acyclic(graph))

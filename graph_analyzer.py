@@ -70,7 +70,7 @@ def get_cycle_of_graph(steps, node):
     cycle = first_part ^ second_part
     cycle.add(start_of_cycle)
 
-    return f'N {sorted(cycle)}'
+    return f'N {sorted(cycle)}'.replace(',', '').replace('[', '').replace(']','')
 
 
 def write_result(result):
